@@ -76,14 +76,14 @@ function display_results() {
     // If we're including all posts and reblogs, then we just have to
     // look at the length of the tags attribute
     var is_untagged = function(post) {
-      return !post.tags.length;
+      return post.tags.length;
     }
   } else {
     // If we're including all posts, but not reblogs, then we look at
     // the length of the tags attribute, and whether the post has an
     // attribute that only appears on reblogs
     var is_untagged = function(post) {
-      return (!post.tags.length) && (!post.hasOwnProperty("reblogged_root_id"));
+      return post.tags.length;
     }
   }
 
